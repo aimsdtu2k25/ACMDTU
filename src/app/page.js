@@ -1,12 +1,10 @@
-"use client";
+'use client'
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
-import Navigation from "./components/Navigation";
 export default function HomePage() {
 
-  const [selectedYear, setSelectedYear] = useState("All");
   const [showScrollTop, setShowScrollTop] = useState(false);
   
   
@@ -31,29 +29,27 @@ export default function HomePage() {
     { id: 5, title: 'MULTIPLE DISEASE PREDICTION', year: '2022', desc: 'Use of passive voice in reporting and building a multiple disease prediction system.' },
     { id: 6, title: 'SIGN LANGUAGE DETECTION', year: '2020', desc: 'Sign language character recognition and speech emotion detection using computer vision.' },
   ];
-  const filteredCards =
-  selectedYear === "All"
-    ? cards
-    : cards.filter((card) => card.year === selectedYear);
+
 
   return (
     
     <main className="min-h-screen bg-[#0f1011] text-gray-200 font-sans relative">
-      <Navigation setSelectedYear={setSelectedYear} />
-      {/* HIBP-Style Stark Hero Section */}
-      <div className="bg-[#0a0a0b] py-20 px-4 text-center border-b-[6px] border-[#3182ce]">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-white">
+      <div className="bg-[#0a0a0b] py-20 px-4 text-center border-b-[6px] border-[#3182ce] overflow-hidden">   
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-[#111827] via-[#071642] to-[#123084e2]"></div>
+        <div className="relative z-10">
+        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-indigo-600">
           PAST WORKSHOPS
         </h1>
         <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium tracking-wide">
           Explore our repository of past events, projects, and computational intelligence workshops.
         </p>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         {/* Dark Glassmorphic Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCards.map((card) => (
+          {cards.map((card) => (
             <div 
               key={card.id} 
               
