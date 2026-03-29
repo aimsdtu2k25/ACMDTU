@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 export default function Home() {
   return (
     <div className="min-h-screen text-slate-100" style={{ background: "#05080f" }}>
-      {/* Fixed glow layer */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{

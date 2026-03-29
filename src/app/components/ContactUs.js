@@ -50,7 +50,12 @@ export default function ContactUs() {
  
             <div className="flex items-center gap-3 text-sm text-white/80">
               <Mail size={16} className="shrink-0 text-white/60" />
-              <span>aims@dtu.ac.in</span>
+              <a
+                href="mailto:aims@dtu.ac.in"
+                className="hover:text-white transition-colors"
+              >
+                aims@dtu.ac.in
+              </a>
             </div>
  
             <div className="flex items-start gap-3 text-sm text-white/80">

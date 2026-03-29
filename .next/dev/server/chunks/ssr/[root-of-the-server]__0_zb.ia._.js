@@ -203,7 +203,9 @@ function ContactUs() {
                                             lineNumber: 52,
                                             columnNumber: 15
                                         }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "mailto:aims@dtu.ac.in",
+                                            className: "hover:text-white transition-colors",
                                             children: "aims@dtu.ac.in"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
@@ -224,7 +226,7 @@ function ContactUs() {
                                             className: "shrink-0 text-white/60 mt-0.5"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                            lineNumber: 57,
+                                            lineNumber: 62,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -234,7 +236,7 @@ function ContactUs() {
                                                     children: "Delhi Technological University,"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                                    lineNumber: 59,
+                                                    lineNumber: 64,
                                                     columnNumber: 17
                                                 }, this),
                                                 " ",
@@ -242,20 +244,20 @@ function ContactUs() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                            lineNumber: 58,
+                                            lineNumber: 63,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                    lineNumber: 56,
+                                    lineNumber: 61,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "border-t border-white/15 pt-2"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                    lineNumber: 66,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -284,17 +286,17 @@ function ContactUs() {
                                             className: "w-[52px] h-[52px] flex items-center justify-center rounded-[10px] border border-white/25 text-white transition hover:bg-white/10 hover:border-white/50",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {}, void 0, false, {
                                                 fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                                lineNumber: 82,
+                                                lineNumber: 87,
                                                 columnNumber: 19
                                             }, this)
                                         }, label, false, {
                                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                            lineNumber: 74,
+                                            lineNumber: 79,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                    lineNumber: 68,
+                                    lineNumber: 73,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -317,7 +319,7 @@ function ContactUs() {
                             children: "© 2026 AIMS DTU. All rights reserved."
                         }, void 0, false, {
                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                            lineNumber: 91,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -329,7 +331,7 @@ function ContactUs() {
                                     children: "Privacy Policy"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                    lineNumber: 93,
+                                    lineNumber: 98,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -338,19 +340,19 @@ function ContactUs() {
                                     children: "Terms of Service"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                                    lineNumber: 94,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                            lineNumber: 92,
+                            lineNumber: 97,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/components/ContactUs.js",
-                    lineNumber: 90,
+                    lineNumber: 95,
                     columnNumber: 9
                 }, this)
             ]
@@ -510,7 +512,7 @@ function Home() {
                 }
             }, void 0, false, {
                 fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                lineNumber: 8,
+                lineNumber: 7,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -525,17 +527,17 @@ function Home() {
                             className: "rounded-2xl border border-white/15 bg-white/5 px-5 py-4",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$src$2f$app$2f$components$2f$Navbar$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                                lineNumber: 19,
+                                lineNumber: 18,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                            lineNumber: 18,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                        lineNumber: 17,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -554,35 +556,35 @@ function Home() {
                                     "Welcome to ACM DTU",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                                        lineNumber: 34,
+                                        lineNumber: 33,
                                         columnNumber: 15
                                     }, this),
                                     "Student Chapter"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                                lineNumber: 24,
+                                lineNumber: 23,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                            lineNumber: 23,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                        lineNumber: 22,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$AIMSDTU$2f$ACMDTU$2f$src$2f$app$2f$components$2f$ContactUs$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/AIMSDTU/ACMDTU/src/app/page.js",
-                lineNumber: 16,
+                lineNumber: 15,
                 columnNumber: 7
             }, this)
         ]
