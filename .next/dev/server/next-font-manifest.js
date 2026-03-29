@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\n  \"app\": {\n    \"[project]/Desktop/AIMSDTU/ACMDTU/src/app/page\": [\n      \"static/media/6bd983bd58a87a3d-s.p.0h108oidc_0fm.woff2\",\n      \"static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2\"\n    ]\n  },\n  \"appUsingSizeAdjust\": true,\n  \"pages\": {},\n  \"pagesUsingSizeAdjust\": false\n}"

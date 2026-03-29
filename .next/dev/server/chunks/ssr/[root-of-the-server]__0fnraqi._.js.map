@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///Users/ritwikjain/Desktop/AIMSDTU/ACMDTU/src/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,0KAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///Users/ritwikjain/Desktop/AIMSDTU/ACMDTU/src/app/page.js"],"sourcesContent":["export default function Home() {\n  return (\n    <div className=\"min-h-screen bg-slate-950 text-slate-100\">\n      <main className=\"flex min-h-screen items-center justify-center px-6 py-16 text-center\">\n        <h1 className=\"h-display max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl\">\n          Welcome to ACM DTU Student Chapter\n        </h1>\n      </main>\n    </div>\n  );\n}\n"],"names":["Home","className"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8QAAC;QAAIC,WAAU;kBACb,cAAA,8QAAC;YAAKA,WAAU;sBACd,cAAA,8QAAC;gBAAGA,WAAU;0BAA8F;;;;;;;;;;;;;;;;AAMpH"}}]
-}
