@@ -34,8 +34,12 @@ export default function HomePage() {
   return (
     
     <main className="min-h-screen bg-[#0f1011] text-gray-200 font-sans relative">
-      <div className="bg-[#0a0a0b] py-20 px-4 text-center border-b-[6px] border-[#3182ce] overflow-hidden">   
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-[#111827] via-[#071642] to-[#123084e2]"></div>
+      <div className="relative py-20 px-4 text-center border-b-[6px] border-[#3182ce] overflow-hidden"> 
+        <div className="absolute inset-0 z-0 "
+        style={{ 
+        background: 'radial-gradient(ellipse at center, #111827 0%, #030712 100%)' 
+        }}
+        ></div>
         <div className="relative z-10">
         <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-indigo-600">
           PAST WORKSHOPS
