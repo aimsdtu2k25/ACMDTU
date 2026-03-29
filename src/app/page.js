@@ -41,7 +41,7 @@ export default function HomePage() {
         }}
         ></div>
         <div className="relative z-10">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-indigo-600">
+        <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter bg-gradient-to-r from-[oklch(95%_0.10_200)] to-[oklch(71.5% 0.143 215.221)] bg-clip-text text-transparent italic font-bold tracking-tight">
           PAST WORKSHOPS
         </h1>
         <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-medium tracking-wide">
@@ -62,13 +62,13 @@ export default function HomePage() {
               {/* Default State (Visible initially, fades out on hover) */}
               <div className="absolute inset-0 p-8 flex flex-col justify-center transition-opacity duration-300 group-hover:opacity-0">
                 <div className="text-[#3182ce] font-bold text-sm mb-4 tracking-widest uppercase">{card.year}</div>
-                <h3 className="text-3xl font-extrabold text-white leading-tight">{card.title}</h3>
+                <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[oklch(95%_0.10_200)] to-[oklch(71.5% 0.143 215.221)] bg-clip-text text-transparent italic font-bold tracking-tight leading-tight">{card.title}</h3>
               </div>
 
               {/* Hover State (Hidden initially, slides up on hover) */}
               <div className="absolute inset-0 p-8 bg-[#0a0a0b]/90 backdrop-blur-xl flex flex-col justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 grow">
+                <h3 className="text-xl font-bold bg-gradient-to-r from-[oklch(95%_0.10_200)] to-[oklch(71.5% 0.143 215.221)] bg-clip-text text-transparent italic font-bold tracking-tight mb-3">{card.title}</h3>
+                <p className="text-g text-sm leading-relaxed mb-6 grow">
                   {card.desc}
                 </p>
                 <button className="bg-[#3182ce] text-white py-3 px-6 font-bold text-sm uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center">
