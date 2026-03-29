@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
 
 export default function EventsPage() {
   const upcomingEvents = [
@@ -80,13 +82,15 @@ export default function EventsPage() {
                 key={event.id} 
                 className="group relative flex flex-col border-2 border-green-900/50 bg-[#0a0a0a] transition-all duration-300 hover:border-green-400 shadow-[8px_8px_0px_0px_rgba(22,101,52,0.2)] hover:shadow-[12px_12px_0px_0px_rgba(34,197,94,0.3)]"
               >
+                {/* Frame: next/image requires fill + parent relative */}
                 <div className="relative h-72 w-full overflow-hidden border-b border-green-900/50">
-                  <img
+                  <Image
                     src={event.image}
                     alt={event.title}
-                    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                    fill
+                    className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
-                  <div className="absolute top-6 left-6 bg-green-500 text-black px-4 py-1 text-xs font-black tracking-widest uppercase shadow-lg">
+                  <div className="absolute top-6 left-6 bg-green-500 text-black px-4 py-1 text-xs font-black tracking-widest uppercase shadow-lg z-10">
                     {event.category}
                   </div>
                 </div>
@@ -124,11 +128,13 @@ export default function EventsPage() {
                 key={event.id} 
                 className="group relative flex flex-col border border-zinc-800 bg-[#0a0a0a] transition-all duration-300 hover:border-zinc-500 shadow-[6px_6px_0px_0px_rgba(24,24,27,1)] hover:shadow-[10px_10px_0px_0px_rgba(26,90,150,0.2)]"
               >
+                {/* Frame: next/image optimization */}
                 <div className="relative h-48 w-full overflow-hidden border-b border-zinc-800">
-                  <img
+                  <Image
                     src={event.image}
                     alt={event.title}
-                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                    fill
+                    className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
                   />
                 </div>
 
