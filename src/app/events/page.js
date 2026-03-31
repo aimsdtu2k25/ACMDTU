@@ -52,17 +52,14 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black font-sans text-zinc-100">
+    <div className="w-full bg-transparent text-slate-100">
       
       {/* Archive Header */}
       <header className="border-b-4 border-zinc-900 py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tighter uppercase italic">
-            Events<span className="text-[#1a5a96]">.</span>
-          </h1>
-          <p className="mt-4 text-xl font-mono text-zinc-500 uppercase tracking-[0.3em]">
-            ACM-DTU // AI & ML Directory
-          </p>
+          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent italic tracking-tight">
+              EVENTS
+            </h1>
         </div>
       </header>
 
@@ -72,41 +69,40 @@ export default function EventsPage() {
         <section>
           <div className="flex items-center gap-4 mb-12">
             <h2 className="text-3xl font-black uppercase tracking-tight">Upcoming Entries</h2>
-            <div className="h-[2px] flex-1 bg-green-500/30"></div>
-            <span className="font-mono text-green-500 text-sm animate-pulse">● LIVE_STATUS</span>
+            <div className="h-[2px] flex-1 bg-[#3182ce]/30"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {upcomingEvents.map((event) => (
               <div 
                 key={event.id} 
-                className="group relative flex flex-col border-2 border-green-900/50 bg-[#0a0a0a] transition-all duration-300 hover:border-green-400 shadow-[8px_8px_0px_0px_rgba(22,101,52,0.2)] hover:shadow-[12px_12px_0px_0px_rgba(34,197,94,0.3)]"
+                className="group relative flex flex-col border-2 border-blue-900/50 bg-[#0a0a0a] transition-all duration-300 hover:border-[#3182ce] shadow-[8px_8px_0px_0px_rgba(30,58,138,0.2)] hover:shadow-[12px_12px_0px_0px_rgba(49,130,206,0.3)]"
               >
-                {/* Frame: next/image requires fill + parent relative */}
-                <div className="relative h-72 w-full overflow-hidden border-b border-green-900/50">
+                {/* Frame */}
+                <div className="relative h-72 w-full overflow-hidden border-b border-blue-900/50">
                   <Image
                     src={event.image}
                     alt={event.title}
                     fill
                     className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
-                  <div className="absolute top-6 left-6 bg-green-500 text-black px-4 py-1 text-xs font-black tracking-widest uppercase shadow-lg z-10">
+                  <div className="absolute top-6 left-6 bg-[#3182ce] text-white px-4 py-1 text-xs font-black tracking-widest uppercase shadow-lg z-10">
                     {event.category}
                   </div>
                 </div>
 
                 <div className="p-8">
                   <div className="flex justify-between items-baseline mb-4">
-                    <span className="font-mono text-sm text-green-500 font-bold">{event.date}</span>
+                    <span className="font-mono text-sm text-[#3182ce] font-bold">{event.date}</span>
                     <span className="text-[10px] text-zinc-700 font-bold tracking-widest uppercase">ID: {event.id}</span>
                   </div>
-                  <h3 className="text-3xl font-bold leading-tight mb-4 uppercase">
+                  <h3 className="text-3xl font-bold leading-tight mb-4 uppercase group-hover:text-white transition-colors">
                     {event.title}
                   </h3>
                   <p className="text-zinc-400 text-base leading-relaxed mb-8">
                     {event.description}
                   </p>
-                  <button className="w-full bg-green-600 py-4 text-black text-sm font-black uppercase tracking-widest transition-all hover:bg-white">
+                  <button className="w-full bg-[#3182ce] py-4 text-white text-sm font-black uppercase tracking-widest transition-all hover:bg-white hover:text-black">
                     {event.actionLabel}
                   </button>
                 </div>
@@ -126,9 +122,9 @@ export default function EventsPage() {
             {pastEvents.map((event) => (
               <div 
                 key={event.id} 
-                className="group relative flex flex-col border border-zinc-800 bg-[#0a0a0a] transition-all duration-300 hover:border-zinc-500 shadow-[6px_6px_0px_0px_rgba(24,24,27,1)] hover:shadow-[10px_10px_0px_0px_rgba(26,90,150,0.2)]"
+                className="group relative flex flex-col border border-zinc-800 bg-[#0a0a0a] transition-all duration-300 hover:border-zinc-500 shadow-[6px_6px_0px_0px_rgba(24,24,27,1)] hover:shadow-[10px_10px_0px_0px_rgba(49,130,206,0.2)]"
               >
-                {/* Frame: next/image optimization */}
+                {/* Frame */}
                 <div className="relative h-48 w-full overflow-hidden border-b border-zinc-800">
                   <Image
                     src={event.image}
@@ -143,10 +139,10 @@ export default function EventsPage() {
                     <span className="font-mono text-[10px] text-zinc-500 uppercase">{event.date}</span>
                     <span className="text-[9px] text-zinc-800 font-bold tracking-widest uppercase">{event.category}</span>
                   </div>
-                  <h3 className="text-xl font-bold leading-tight mb-3 uppercase group-hover:text-[#1a5a96] transition-colors">
+                  <h3 className="text-xl font-bold leading-tight mb-3 uppercase group-hover:text-[#3182ce] transition-colors">
                     {event.title}
                   </h3>
-                  <button className="text-[10px] font-black uppercase tracking-tighter text-zinc-600 hover:text-white transition-colors">
+                  <button className="text-[10px] font-black uppercase tracking-tighter text-zinc-600 hover:text-[#3182ce] transition-colors">
                     → VIEW RECAP
                   </button>
                 </div>
@@ -155,13 +151,6 @@ export default function EventsPage() {
           </div>
         </section>
       </main>
-
-      {/* Footer Branding */}
-      <footer className="border-t border-zinc-900 py-16 text-center">
-        <p className="text-zinc-700 font-mono text-[10px] uppercase tracking-[1em]">
-          End of Archive // ACM-DTU
-        </p>
-      </footer>
     </div>
   );
 }
