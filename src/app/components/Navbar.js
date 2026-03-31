@@ -13,22 +13,13 @@ export default function Navbar() {
         </div>
       </div>
       <div className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-        <a className="transition hover:text-white" href="#features">
-          Features
+        <a className="transition hover:text-white text-sm font-semibold uppercase tracking-[0.24em] text-slate-400" href="/workshops" >
+          Workshop
         </a>
-        <a className="transition hover:text-white" href="#proof">
-          Impact
-        </a>
-        <a className="transition hover:text-white" href="#stories">
-          Stories
-        </a>
-        <a className="transition hover:text-white" href="#contact">
-          Contact
+        <a className="transition hover:text-white text-sm font-semibold uppercase tracking-[0.24em] text-slate-400" href="#proof">
+          Events
         </a>
       </div>
-      <button className="rounded-full border border-white/10 bg-white/10 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/20">
-        Book a demo
-      </button>
     </nav>
   );
 }
