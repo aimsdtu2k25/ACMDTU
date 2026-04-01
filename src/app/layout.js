@@ -1,19 +1,8 @@
-import { DM_Sans, Sora, Geist } from "next/font/google"; // Added Geist here
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -28,8 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${sora.variable} ${dmSans.variable} min-h-full flex flex-col bg-slate-950 text-slate-100 antialiased`}
-      >
+        className={`${poppins.variable} min-h-full flex flex-col bg-slate-950 text-slate-100 antialiased font-sans`}>
         {children}
       </body>
     </html>

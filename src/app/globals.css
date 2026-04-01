@@ -1,28 +1,54 @@
+/* Section header utility for consistency */
+.section-header {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  font-family: var(--font-main), Poppins, ui-sans-serif, system-ui, sans-serif;
+  background: linear-gradient(to right, #fff, #7ec8e3 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 @import "tailwindcss";
 
 :root {
   --background: #070a13;
   --foreground: #e8edf4;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-heading: var(--font-sora);
-  --font-body: var(--font-dm-sans);
+  --font-main: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-main), Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 .h-display {
-  font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-main), Poppins, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  color: #e8edf4;
+}
+
+a {
+  color: #7ec8e3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #fff;
 }
 
 ::selection {
