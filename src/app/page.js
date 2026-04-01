@@ -10,6 +10,8 @@ import Events from "./events/page";
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedYear, setSelectedYear] = useState("ALL");
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +85,9 @@ export default function HomePage() {
         "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=800",
     },
   ];
-
+    const filteredCards = selectedYear === "ALL" 
+    ? workshopCards 
+    : workshopCards.filter(card => card.year === selectedYear);
   return (
     <div
       className="min-h-screen text-slate-100 selection:bg-[#3182ce]/30"
@@ -146,50 +150,57 @@ export default function HomePage() {
         {/* WORKSHOPS SECTION (ID matches Navbar) */}
         <section id="workshops" className="py-32 px-6 border-t border-white/5">
           <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col items-center mb-16 gap-8 text-center">
             <h2 className="text-5xl font-black mb-16 italic tracking-tighter bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent">
               PAST WORKSHOPS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {workshopCards.map((card) => (
-                <div
-                  key={card.id}
-                  className="group relative h-80 bg-[#1a1c20]/40 backdrop-blur-md border border-gray-800 transition-all duration-300 rounded-sm overflow-hidden shadow-none ring-0 outline-none hover:border-[#3182ce] hover:shadow-none hover:ring-0 hover:outline-none"
-                >
-                  {/* Main Card Content (Pops with color on hover) */}
-                  <div className="absolute inset-0 z-0">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 opacity-40 group-hover:opacity-60"
-                    />
-                    {/* Dark gradient to ensure text remains readable */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05080f] via-[#05080f]/40 to-transparent" />
-                  </div>
-                  <div className="absolute inset-0 p-8 flex flex-col justify-center transition-all duration-300 z-10">
-                    <div className="text-[#3182ce] font-bold text-sm mb-4 tracking-widest uppercase transition-colors group-hover:text-blue-400">
-                      {card.year}
+            <div className="flex flex-wrap justify-center gap-3">
+                {["ALL", "2020", "2021", "2022"].map((year) => (
+                  <button
+                    key={year}
+                    onClick={() => setSelectedYear(year)}
+                    className={`px-8 py-2.5 rounded-full border text-xs font-bold tracking-widest transition-all duration-300 ${
+                      selectedYear === year 
+                      ? "bg-[#3182ce] border-[#3182ce] text-white" 
+                      : "border-white/10 text-gray-400 hover:border-[#3182ce]/50 hover:text-white"
+                    }`}
+                  >
+                    {year}
+                  </button>
+                ))}
+              </div>
+              </div>
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <AnimatePresence mode="popLayout">
+              {filteredCards.map((card) => (
+                  <motion.div
+                    key={card.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                    transition={{ duration: 0.4 }}
+                    className="group relative h-80 bg-[#1a1c20]/40 backdrop-blur-md border border-gray-800 rounded-sm overflow-hidden hover:border-[#3182ce] shadow-none"
+                  >
+                    <div className="absolute inset-0 z-0">
+                      <Image src={card.image} alt={card.title} fill className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 opacity-40 group-hover:opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#05080f] via-[#05080f]/40 to-transparent" />
                     </div>
-                    <h3 className="text-3xl font-extrabold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent italic leading-tight transition-all duration-300 group-hover:from-white group-hover:to-blue-200">
-                      {card.title}
-                    </h3>
-                  </div>
-
-                  {/* Hover Overlay (Revealing Details) */}
-                  <div className="absolute inset-0 p-8 bg-[#0a0a0b]/1 backdrop-blur-xl flex flex-col justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 shadow-none ring-0 outline-none">
-                    <h3 className="text-xl font-bold text-[#3182ce] italic mb-3">
-                      {card.title}
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6 grow">
-                      {card.desc}
-                    </p>
-                    <button className="bg-[#3182ce] text-white py-3 px-6 font-bold text-sm uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center ">
-                      Read More
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+                    <div className="absolute inset-0 p-8 flex flex-col justify-center transition-all duration-300 z-10">
+                      <div className="text-[#3182ce] font-bold text-sm mb-4 tracking-widest uppercase group-hover:text-blue-400">{card.year}</div>
+                      <h3 className="text-3xl font-extrabold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent italic leading-tight group-hover:from-white group-hover:to-blue-200">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <div className="absolute inset-0 p-8 bg-[#0a0a0b]/1 backdrop-blur-xl flex flex-col justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 shadow-none">
+                      <h3 className="text-xl font-bold text-[#3182ce] italic mb-3">{card.title}</h3>
+                      <p className="text-gray-300 text-sm leading-relaxed mb-6 grow">{card.desc}</p>
+                      <button className="bg-[#3182ce] text-white py-3 px-6 font-bold text-sm uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center">Read More</button>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           </div>
         </section>
 
