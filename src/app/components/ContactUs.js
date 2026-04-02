@@ -36,12 +36,12 @@ export default function ContactUs() {
       <div className="border-t border-white/30 pt-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col items-center gap-3 shrink-0">
-            <div className="h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-2xl border border-white/20 bg-white/5">
+            <div className="h-48 w-48 sm:h-56 sm:w-56 overflow-hidden rounded-2xl border border-white/20 bg-[#222222]">
               <Image
-                src="/image.png"
+                src="/icon-dark.svg"
                 alt="ACM DTU Logo"
-                width={160}
-                height={160}
+                width={224}
+                height={224}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -50,7 +50,7 @@ export default function ContactUs() {
             </span>
             <span className="text-xs text-white/60 text-center">
               Empowering students in computing, research, and innovation since
-              2009.
+              2025.
             </span>
           </div>
 
@@ -109,15 +109,11 @@ export default function ContactUs() {
             </div>
             <div className="mt-4 text-xs text-white/60">
               <div>
-                <span className="font-semibold">President:</span> Priya Sharma
+                <span className="font-semibold">Chairperson:</span> Ishan Chugh
               </div>
               <div>
-                <span className="font-semibold">Faculty Advisor:</span> Dr. R.
-                K. Gupta
-              </div>
-              <div>
-                <span className="font-semibold">Upcoming Event:</span> ACM
-                Coding Marathon 2026 (April 20, 2026)
+                <span className="font-semibold">Faculty Advisor:</span> Prof
+                Dinesh Kumar Vishwakarma
               </div>
             </div>
           </div>
@@ -128,14 +124,6 @@ export default function ContactUs() {
           <p className="text-xs text-white/40">
             © 2026 ACM Student Chapter, DTU. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-white/40">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </section>

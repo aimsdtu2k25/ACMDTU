@@ -8,9 +8,19 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "ACM DTU | Product Design for Teams",
+  title: "ACM Student Chapter | Delhi Technological University",
   description:
-    "ACM DTU helps student teams plan, design, and ship products with clarity and speed.",
+    "The DTU ACM Student Chapter is dedicated to advancing computing, bridging theory and industry, and cultivating the next generation of technical leaders at Delhi Technological University.",
+  keywords: [
+    "ACM",
+    "DTU",
+    "Delhi Technological University",
+    "Student Chapter",
+    "AI/ML",
+    "Cybersecurity",
+    "Hackathon",
+    "Brainwave",
+  ],
 };
 
 export default function RootLayout({ children }) {
