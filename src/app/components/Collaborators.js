@@ -53,8 +53,13 @@ export default function Collaborators() {
         <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#05080f] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#05080f] to-transparent z-10 pointer-events-none" />
 
-        {/* Two identical strips side by side — when strip 1 scrolls off, strip 2 takes its place seamlessly */}
-        <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
+        {/* Two identical strips — translateX by exact pixel width of one strip */}
+        <div
+          className="flex group-hover:[animation-play-state:paused]"
+          style={{
+            animation: "marquee-scroll 16s linear infinite",
+          }}
+        >
           {/* Strip 1 */}
           {societies.map((society, i) => (
             <Card key={`a-${i}`} society={society} />
