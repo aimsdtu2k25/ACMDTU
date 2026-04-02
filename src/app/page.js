@@ -11,6 +11,7 @@ import Image from "next/image";
 import ContactUs from "./components/ContactUs";
 import Navbar from "./components/Navbar";
 import Events from "./events/page";
+import Collaborators from "./components/Collaborators";
 
 // Animated counter hook
 function useCountUp(target, duration = 2000, startOnView = false) {
@@ -905,6 +906,9 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
+
+        {/* COLLABORATING SOCIETIES */}
+        <Collaborators />
 
         {/* EVENTS SECTION */}
         <section id="events" className="py-10 sm:py-16 px-2 sm:px-6 border-t border-white/5">
