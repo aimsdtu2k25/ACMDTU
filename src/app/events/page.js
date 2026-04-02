@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function EventsPage() {
   const upcomingEvents = [
@@ -79,9 +80,13 @@ export default function EventsPage() {
           <div className="mb-6 sm:mb-8" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-            {upcomingEvents.map((event) => (
-              <div
+            {upcomingEvents.map((event, index) => (
+              <motion.div
                 key={event.id}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
                 className="group relative flex flex-col border-2 border-blue-900/50 bg-[#0a0a0a] transition-all duration-300 hover:border-[#3182ce] shadow-[6px_6px_0px_0px_rgba(30,58,138,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(49,130,206,0.18)] rounded-xl">
                 {/* Frame */}
                 <div className="relative h-52 w-full overflow-hidden border-b border-blue-900/50">
@@ -122,7 +127,7 @@ export default function EventsPage() {
                     {event.actionLabel}
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>

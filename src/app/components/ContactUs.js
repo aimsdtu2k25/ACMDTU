@@ -1,5 +1,8 @@
+"use client";
+
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const InstagramIcon = () => (
   <svg
@@ -24,13 +27,31 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+const socials = [
+  {
+    label: "Instagram",
+    Icon: InstagramIcon,
+    href: "https://www.instagram.com/dtuacm/",
+  },
+  {
+    label: "LinkedIn",
+    Icon: LinkedInIcon,
+    href: "https://www.linkedin.com/company/acmdtu/posts/?feedView=all",
+  },
+];
 
 export default function ContactUs() {
   return (
     <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-16">
       <div className="border-t border-white/30 pt-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div className="flex flex-col items-center gap-3 shrink-0">
+          {/* Logo side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col items-center gap-3 shrink-0">
             <div className="h-48 w-48 sm:h-56 sm:w-56 overflow-hidden rounded-2xl border border-white/20 bg-[#222222]">
               <Image
                 src="/icon-dark.svg"
@@ -47,21 +68,37 @@ export default function ContactUs() {
               Empowering students in computing, research, and innovation since
               2025.
             </span>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-5 w-full max-w-xl">
+          {/* Contact info side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col gap-5 w-full max-w-xl">
             <h3 className="text-lg font-bold text-white">Contact Us</h3>
 
-            <div className="flex items-center gap-3 text-base text-white/80">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="flex items-center gap-3 text-base text-white/80">
               <Mail size={18} className="shrink-0 text-white/60" />
               <a
                 href="mailto:acm@dtu.ac.in"
                 className="hover:text-white transition-colors">
                 acm@dtu.ac.in
               </a>
-            </div>
+            </motion.div>
 
-            <div className="flex items-start gap-3 text-base text-white/80">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex items-start gap-3 text-base text-white/80">
               <MapPin size={18} className="shrink-0 text-white/60 mt-0.5" />
               <span>
                 <strong className="text-white font-semibold">
@@ -69,35 +106,34 @@ export default function ContactUs() {
                 </strong>{" "}
                 Shahbad Daulatpur, Rohini, Delhi 110042
               </span>
-            </div>
+            </motion.div>
 
             <div className="border-t border-white/15 pt-2" />
 
             <div className="flex gap-3 flex-wrap">
-              {[
-                {
-                  label: "Instagram",
-                  Icon: InstagramIcon,
-                  href: "https://www.instagram.com/dtuacm/",
-                },
-                {
-                  label: "LinkedIn",
-                  Icon: LinkedInIcon,
-                  href: "https://www.linkedin.com/company/acmdtu/posts/?feedView=all",
-                },
-              ].map(({ label, Icon, href }) => (
-                <a
+              {socials.map(({ label, Icon, href }, i) => (
+                <motion.a
                   key={label}
                   aria-label={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.4 + i * 0.1, type: "spring", stiffness: 200 }}
+                  whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(78,202,255,0.3)" }}
                   className="w-12 h-12 flex items-center justify-center rounded-[10px] border border-white/25 text-white transition hover:bg-white/10 hover:border-white/50">
                   <Icon />
-                </a>
+                </motion.a>
               ))}
             </div>
-            <div className="mt-4 text-xs text-white/60">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-4 text-xs text-white/60">
               <div>
                 <span className="font-semibold">Chairperson:</span> Ishan Chugh
               </div>
@@ -105,16 +141,21 @@ export default function ContactUs() {
                 <span className="font-semibold">Faculty Advisor:</span> Prof
                 Dinesh Kumar Vishwakarma
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 border-t border-white/15 pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-10 border-t border-white/15 pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-white/40">
-            © 2026 ACM Student Chapter, DTU. All rights reserved.
+            &copy; 2026 ACM Student Chapter, DTU. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

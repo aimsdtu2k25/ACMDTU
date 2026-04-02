@@ -64,16 +64,20 @@ function StatCard({ stat, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      initial={{ opacity: 0, y: 50, scale: 0.85 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
-      whileHover={{ scale: 1.05, borderColor: "rgba(49,130,206,0.5)" }}
-      className="text-center p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-300">
-      <div className="text-3xl sm:text-4xl font-black text-[#4ECAFF] mb-2">
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+      whileHover={{ scale: 1.08, borderColor: "rgba(49,130,206,0.5)", boxShadow: "0 0 30px rgba(78,202,255,0.15)" }}
+      className="group text-center p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors duration-300 relative overflow-hidden">
+      {/* Glow effect on hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{ background: "radial-gradient(circle at 50% 50%, rgba(78,202,255,0.08) 0%, transparent 70%)" }}
+      />
+      <div className="text-3xl sm:text-4xl font-black text-[#4ECAFF] mb-2 relative z-10">
         {display}
       </div>
-      <div className="text-sm text-slate-400 font-medium">{stat.label}</div>
+      <div className="text-sm text-slate-400 font-medium relative z-10">{stat.label}</div>
     </motion.div>
   );
 }
@@ -676,16 +680,21 @@ export default function HomePage() {
         <section
           id="about"
           className="py-12 sm:py-18 px-2 sm:px-6 border-t border-white/5">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-black mb-6 bg-linear-to-r from-white to-[#7ec8e3] bg-clip-text text-transparent">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-3xl sm:text-4xl font-black mb-6 bg-linear-to-r from-white to-[#7ec8e3] bg-clip-text text-transparent">
               Our Mission
-            </h2>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
               The DTU ACM Student Chapter, established in 2025, is dedicated to
               advancing the application of computing within and beyond the
               horizons of Delhi Technological University. Driven by a firm desire
@@ -693,14 +702,19 @@ export default function HomePage() {
               industry demands, the Chapter is committed to cultivating the next
               generation of technical leaders and providing an inclusive platform
               where students can build a better tomorrow.
-            </p>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-slate-400 text-sm sm:text-base leading-relaxed">
               Impacting{" "}
               <span className="font-bold text-[#7ec8e3]">5000+ students</span>{" "}
               through workshops, hackathons, and technical events across AI/ML,
               Cybersecurity, and Technical Aptitude.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </section>
 
         {/* IMPACT STATS SECTION — animated counters */}
@@ -713,12 +727,25 @@ export default function HomePage() {
         </section>
 
         {/* FOCUS AREAS SECTION */}
-        <section className="py-10 sm:py-16 px-2 sm:px-6 border-t border-white/5">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-10 sm:py-16 px-2 sm:px-6 border-t border-white/5 relative overflow-hidden">
+          {/* Background glow that fades in */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none hidden sm:block"
+            style={{
+              background: "radial-gradient(ellipse, rgba(49,130,206,0.06) 0%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div className="max-w-6xl mx-auto relative z-10">
             <motion.h2
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="text-3xl sm:text-4xl font-black mb-10 text-center bg-linear-to-r from-white to-[#7ec8e3] bg-clip-text text-transparent">
               Core Focus Areas
             </motion.h2>
@@ -728,10 +755,10 @@ export default function HomePage() {
                 return (
                   <motion.div
                     key={area.title}
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 60, scale: 0.9 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.15 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: i * 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                     whileHover={{
                       scale: 1.03,
                       y: -4,
@@ -761,13 +788,43 @@ export default function HomePage() {
         {/* PAST EVENTS & WORKSHOPS SECTION */}
         <section
           id="workshops"
-          className="py-14 sm:py-20 px-2 sm:px-6 border-t border-white/5">
-          <div className="max-w-7xl mx-auto">
+          className="py-14 sm:py-20 px-2 sm:px-6 border-t border-white/5 relative overflow-hidden">
+          {/* Section background glow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none hidden sm:block"
+            style={{
+              background: "radial-gradient(ellipse, rgba(49,130,206,0.05) 0%, transparent 60%)",
+              filter: "blur(80px)",
+            }}
+          />
+          <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col items-center mb-8 gap-6 text-center">
-              <h2 className="text-4xl sm:text-5xl font-black mb-6 italic tracking-tighter bg-linear-to-r from-white to-slate-500 bg-clip-text text-transparent">
+              <motion.h2
+                initial={{ opacity: 0, y: 50, scale: 0.9, filter: "blur(12px)" }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="text-4xl sm:text-5xl font-black mb-2 italic tracking-tighter bg-linear-to-r from-white to-slate-500 bg-clip-text text-transparent">
                 PAST EVENTS & WORKSHOPS
-              </h2>
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              </motion.h2>
+              {/* Animated decorative line under heading */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mx-auto mb-6 h-[2px] w-24 sm:w-40 bg-gradient-to-r from-transparent via-[#3182ce] to-transparent origin-center"
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap justify-center gap-2 sm:gap-3">
                 {["ALL", "2025", "2026"].map((year) => (
                   <button
                     key={year}
@@ -780,20 +837,21 @@ export default function HomePage() {
                     {year}
                   </button>
                 ))}
-              </div>
+              </motion.div>
             </div>
             <motion.div
               layout
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <AnimatePresence mode="popLayout">
-                {filteredCards.map((card) => (
+                {filteredCards.map((card, index) => (
                   <motion.div
                     key={card.id}
                     layout
-                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80, y: 30 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    transition={{ duration: 0.7, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="group relative bg-[#1a1c20]/40 backdrop-blur-md border border-gray-800 rounded-lg overflow-hidden hover:border-[#3182ce] shadow-none">
                     {/* Card image area */}
                     <div className="relative h-64 sm:h-80">
@@ -852,12 +910,20 @@ export default function HomePage() {
         <section id="events" className="py-10 sm:py-16 px-2 sm:px-6 border-t border-white/5">
           <div className="max-w-7xl mx-auto">
             <motion.h2
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.9, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              className="text-4xl sm:text-5xl font-black mb-6 italic tracking-tighter bg-linear-to-r from-white to-slate-500 bg-clip-text text-transparent text-center">
+              transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-4xl sm:text-5xl font-black mb-2 italic tracking-tighter bg-linear-to-r from-white to-slate-500 bg-clip-text text-transparent text-center">
               UPCOMING EVENTS
             </motion.h2>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="mx-auto mb-6 h-[2px] w-24 sm:w-40 bg-gradient-to-r from-transparent via-[#3182ce] to-transparent origin-center"
+            />
           </div>
           <Events />
         </section>
