@@ -1,9 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const societies = [
   {
@@ -29,17 +27,6 @@ const societies = [
 ];
 
 export default function Collaborators() {
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (!scrollRef.current) return;
-    const cardWidth = window.innerWidth >= 640 ? 372 : 304;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <section className="py-14 sm:py-20 px-2 sm:px-6 border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -60,42 +47,12 @@ export default function Collaborators() {
         />
       </div>
 
-      {/* Marquee ticker */}
-      <div className="group relative">
-        {/* Fade edges — narrower on mobile */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-r from-[#05080f] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-24 bg-gradient-to-l from-[#05080f] to-transparent z-10 pointer-events-none" />
-
-        {/* Arrow buttons */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 sm:left-1 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200 cursor-pointer">
-          <ChevronLeft size={18} />
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 sm:right-1 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200 cursor-pointer">
-          <ChevronRight size={18} />
-        </button>
-
-        {/* Scrollable container with auto-animation */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto scrollbar-hide group-hover:[animation-play-state:paused]"
-          style={{
-            animation: "marquee-scroll 16s linear infinite",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {/* Strip 1 */}
-          {societies.map((society, i) => (
-            <Card key={`a-${i}`} society={society} />
-          ))}
-          {/* Strip 2 (identical copy for seamless loop) */}
-          {societies.map((society, i) => (
-            <Card key={`b-${i}`} society={society} />
-          ))}
+      <div className="relative overflow-hidden">
+        <div className="flex" style={{ animation: "marquee-scroll 16s linear infinite" }}>
+          {societies.map((s, i) => <Card key={`a-${i}`} society={s} />)}
+          {societies.map((s, i) => <Card key={`b-${i}`} society={s} />)}
+          {societies.map((s, i) => <Card key={`c-${i}`} society={s} />)}
+          {societies.map((s, i) => <Card key={`d-${i}`} society={s} />)}
         </div>
       </div>
     </section>

@@ -55,32 +55,10 @@ a:hover {
   background: rgba(96, 165, 250, 0.25);
 }
 
-/* Hide scrollbar */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Marquee animation — hardcoded pixel shift for 4 cards */
+/* Marquee — slides 25% (one set of 4 out of 16 cards) then loops seamlessly */
 @keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* 4 cards x (280px width + 24px total margin) = 1216px on mobile */
-    transform: translateX(-1216px);
-  }
-}
-
-@media (min-width: 640px) {
-  @keyframes marquee-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      /* 4 cards x (340px width + 32px total margin) = 1488px on desktop */
-      transform: translateX(-1488px);
-    }
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
 }
 
 /* Scanline animation */
