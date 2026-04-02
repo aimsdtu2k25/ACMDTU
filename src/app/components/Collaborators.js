@@ -48,7 +48,7 @@ export default function Collaborators() {
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="flex" style={{ animation: "marquee-scroll 16s linear infinite" }}>
+        <div className="flex" style={{ animation: "marquee-scroll 16s linear infinite", willChange: "transform", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}>
           {societies.map((s, i) => <Card key={`a-${i}`} society={s} />)}
           {societies.map((s, i) => <Card key={`b-${i}`} society={s} />)}
           {societies.map((s, i) => <Card key={`c-${i}`} society={s} />)}

@@ -57,8 +57,8 @@ a:hover {
 
 /* Marquee — slides 25% (one set of 4 out of 16 cards) then loops seamlessly */
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-25%, 0, 0); }
 }
 
 /* Scanline animation */
