@@ -24,10 +24,30 @@ const societies = [
     logo: "/algorev.jpg",
     desc: "DTU's Competitive Programming Club, sharpening algorithmic thinking and problem-solving skills.",
   },
+  {
+    name: "EHAX",
+    logo: "/ehax.png",
+    desc: "DTU's Cybersecurity Society, promoting ethical hacking, network security, and digital defense.",
+  },
+  {
+    name: "JOYSTIX",
+    logo: "/joystix.png",
+    desc: "The Game Development Society of DTU, building immersive games, pixel art, and interactive experiences.",
+  },
+  {
+    name: "AIMS-DTU",
+    logo: "/aims-dtu.png",
+    desc: "The AI & ML Society of DTU, driving innovation in deep learning, computer vision, and data science.",
+  },
+  {
+    name: "ALGORAVE",
+    logo: "/algorev.jpg",
+    desc: "DTU's Competitive Programming Club, sharpening algorithmic thinking and problem-solving skills.",
+  },
 ];
 
-// Double for seamless loop
-const marqueeItems = [...societies, ...societies];
+// Triple to ensure screen is always filled during loop
+const marqueeItems = [...societies, ...societies, ...societies];
 
 export default function Collaborators() {
   return (
