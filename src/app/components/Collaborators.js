@@ -47,21 +47,13 @@ export default function Collaborators() {
         />
       </div>
 
-      {/*
-        TWO identical flex strips sitting side by side.
-        Each strip is 100% of the total cards width.
-        Both animate together moving left.
-        When strip-1 fully exits left, strip-2 is exactly where strip-1 started.
-        Animation resets invisibly because the position is identical.
-      */}
+      {/* Marquee: two identical strips animate left together. Uses inline style for bulletproof animation. */}
       <div className="relative overflow-hidden">
-        <div className="marquee-track flex">
-          {/* Strip 1 */}
-          <div className="marquee-strip flex shrink-0">
+        <div className="marquee-wrap">
+          <div className="marquee-inner">
             {societies.map((s, i) => <Card key={`a-${i}`} society={s} />)}
           </div>
-          {/* Strip 2 — exact duplicate */}
-          <div className="marquee-strip flex shrink-0">
+          <div className="marquee-inner" aria-hidden="true">
             {societies.map((s, i) => <Card key={`b-${i}`} society={s} />)}
           </div>
         </div>

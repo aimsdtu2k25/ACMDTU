@@ -50,16 +50,24 @@ a:hover {
   background: rgba(96, 165, 250, 0.25);
 }
 
-/* Marquee infinite scroll */
-.marquee-track {
+/* Marquee: two strips side by side, each scrolls its own width */
+.marquee-wrap {
   display: flex;
-  will-change: transform;
-  animation: marquee-infinite 18s linear infinite;
+  overflow: hidden;
+  width: 100%;
 }
 
-@keyframes marquee-infinite {
+.marquee-inner {
+  display: flex;
+  shrink: 0;
+  flex-shrink: 0;
+  animation: scroll-left 18s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-left {
   from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(-100%, 0, 0); }
 }
 
 /* Scanline animation */
