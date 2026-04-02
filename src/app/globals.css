@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Section header utility for consistency */
 .section-header {
   font-size: 2.25rem;
@@ -14,7 +16,6 @@
   text-transform: uppercase;
   line-height: 1.1;
 }
-@import "tailwindcss";
 
 :root {
   --background: #070a13;
@@ -30,13 +31,7 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h-display {
+h1, h2, h3, h4, h5, h6, .h-display {
   font-family: var(--font-main), Poppins, ui-sans-serif, system-ui, sans-serif;
   font-weight: 700;
   color: #e8edf4;
@@ -55,10 +50,16 @@ a:hover {
   background: rgba(96, 165, 250, 0.25);
 }
 
-/* Marquee — slides 25% (one set of 4 out of 16 cards) then loops seamlessly */
-@keyframes marquee-scroll {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-25%, 0, 0); }
+/* Marquee infinite scroll */
+.marquee-track {
+  display: flex;
+  will-change: transform;
+  animation: marquee-infinite 18s linear infinite;
+}
+
+@keyframes marquee-infinite {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
 
 /* Scanline animation */

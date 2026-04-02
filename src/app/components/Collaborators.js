@@ -47,12 +47,23 @@ export default function Collaborators() {
         />
       </div>
 
+      {/*
+        TWO identical flex strips sitting side by side.
+        Each strip is 100% of the total cards width.
+        Both animate together moving left.
+        When strip-1 fully exits left, strip-2 is exactly where strip-1 started.
+        Animation resets invisibly because the position is identical.
+      */}
       <div className="relative overflow-hidden">
-        <div className="flex" style={{ animation: "marquee-scroll 16s linear infinite", willChange: "transform", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}>
-          {societies.map((s, i) => <Card key={`a-${i}`} society={s} />)}
-          {societies.map((s, i) => <Card key={`b-${i}`} society={s} />)}
-          {societies.map((s, i) => <Card key={`c-${i}`} society={s} />)}
-          {societies.map((s, i) => <Card key={`d-${i}`} society={s} />)}
+        <div className="marquee-track flex">
+          {/* Strip 1 */}
+          <div className="marquee-strip flex shrink-0">
+            {societies.map((s, i) => <Card key={`a-${i}`} society={s} />)}
+          </div>
+          {/* Strip 2 — exact duplicate */}
+          <div className="marquee-strip flex shrink-0">
+            {societies.map((s, i) => <Card key={`b-${i}`} society={s} />)}
+          </div>
         </div>
       </div>
     </section>
@@ -61,8 +72,8 @@ export default function Collaborators() {
 
 function Card({ society }) {
   return (
-    <div className="flex-shrink-0 w-[280px] sm:w-[340px] mx-3 sm:mx-4">
-      <div className="relative h-full p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-[#3182ce]/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(49,130,206,0.12)] group/card overflow-hidden">
+    <div className="shrink-0 w-[280px] sm:w-[340px] mx-3 sm:mx-4">
+      <div className="relative h-full p-5 sm:p-6 rounded-2xl border border-white/10 bg-white/3 backdrop-blur-sm hover:border-[#3182ce]/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(49,130,206,0.12)] group/card overflow-hidden">
         <div
           className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
@@ -70,7 +81,7 @@ function Card({ society }) {
           }}
         />
         <div className="flex items-center gap-4 mb-4 relative z-10">
-          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-white/10 border border-white/10 flex-shrink-0 group-hover/card:border-[#3182ce]/30 transition-colors duration-300">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-white/10 border border-white/10 shrink-0 group-hover/card:border-[#3182ce]/30 transition-colors duration-300">
             <Image
               src={society.logo}
               alt={`${society.name} Logo`}
