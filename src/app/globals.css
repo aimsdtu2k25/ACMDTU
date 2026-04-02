@@ -55,6 +55,11 @@ a:hover {
   background: rgba(96, 165, 250, 0.25);
 }
 
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Marquee animation — hardcoded pixel shift for 4 cards */
 @keyframes marquee-scroll {
   0% {
