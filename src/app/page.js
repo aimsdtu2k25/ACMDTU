@@ -420,15 +420,37 @@ export default function HomePage() {
             }}
           />
 
-          {/* Mobile: lightweight static glow */}
+          {/* Mobile: CSS-animated particles and glows */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden sm:hidden">
+            {/* Floating orbs */}
             <div
-              className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full opacity-20"
+              className="absolute top-[15%] left-[20%] w-[200px] h-[200px] rounded-full opacity-20 animate-[float1_8s_ease-in-out_infinite]"
               style={{
                 background: "radial-gradient(circle, #3182ce 0%, transparent 70%)",
-                filter: "blur(60px)",
+                filter: "blur(50px)",
               }}
             />
+            <div
+              className="absolute bottom-[20%] right-[10%] w-[180px] h-[180px] rounded-full opacity-15 animate-[float2_10s_ease-in-out_infinite]"
+              style={{
+                background: "radial-gradient(circle, #4ECAFF 0%, transparent 70%)",
+                filter: "blur(50px)",
+              }}
+            />
+            <div
+              className="absolute top-[50%] left-[60%] w-[120px] h-[120px] rounded-full opacity-10 animate-[float3_12s_ease-in-out_infinite]"
+              style={{
+                background: "radial-gradient(circle, #7c3aed 0%, transparent 70%)",
+                filter: "blur(40px)",
+              }}
+            />
+            {/* Tiny floating dots */}
+            <div className="absolute top-[12%] left-[15%] w-1 h-1 rounded-full bg-[#4ECAFF] opacity-60 animate-[twinkle_3s_ease-in-out_infinite]" style={{ boxShadow: "0 0 6px rgba(78,202,255,0.6)" }} />
+            <div className="absolute top-[30%] right-[20%] w-1.5 h-1.5 rounded-full bg-[#4ECAFF] opacity-40 animate-[twinkle_4s_ease-in-out_infinite_1s]" style={{ boxShadow: "0 0 8px rgba(78,202,255,0.5)" }} />
+            <div className="absolute bottom-[35%] left-[25%] w-1 h-1 rounded-full bg-[#3182ce] opacity-50 animate-[twinkle_3.5s_ease-in-out_infinite_0.5s]" style={{ boxShadow: "0 0 6px rgba(49,130,206,0.5)" }} />
+            <div className="absolute top-[60%] right-[30%] w-1 h-1 rounded-full bg-[#7c3aed] opacity-40 animate-[twinkle_5s_ease-in-out_infinite_2s]" style={{ boxShadow: "0 0 6px rgba(124,58,237,0.5)" }} />
+            <div className="absolute bottom-[15%] left-[50%] w-1.5 h-1.5 rounded-full bg-[#4ECAFF] opacity-30 animate-[twinkle_4.5s_ease-in-out_infinite_1.5s]" style={{ boxShadow: "0 0 8px rgba(78,202,255,0.4)" }} />
+            <div className="absolute top-[45%] left-[10%] w-1 h-1 rounded-full bg-[#4ECAFF] opacity-50 animate-[twinkle_3s_ease-in-out_infinite_2.5s]" style={{ boxShadow: "0 0 6px rgba(78,202,255,0.6)" }} />
           </div>
 
           {/* Animated gradient orbs with parallax — desktop only */}
