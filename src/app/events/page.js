@@ -6,7 +6,7 @@ export default function EventsPage() {
   const upcomingEvents = [
     {
       id: "UP-01",
-      title: "Joystix GameJam Workshop",
+      title: "Game Dev Workshop",
       date: "COMING SOON",
       category: "WORKSHOP",
       image:

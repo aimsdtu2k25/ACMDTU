@@ -309,8 +309,8 @@ export default function HomePage() {
           id="home"
           className="relative flex min-h-fit sm:min-h-[85vh] items-center justify-center px-2 sm:px-6 py-12 sm:py-12 overflow-hidden">
 
-          {/* Corner brackets */}
-          <div className="absolute inset-0 pointer-events-none z-[2]">
+          {/* Corner brackets — hidden on mobile */}
+          <div className="absolute inset-0 pointer-events-none z-[2] hidden sm:block">
             {/* Top-left bracket */}
             <svg className="absolute top-4 left-4 sm:top-6 sm:left-6 w-12 h-12 sm:w-16 sm:h-16" viewBox="0 0 48 48" fill="none">
               <motion.path
@@ -405,18 +405,29 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Horizontal scan line */}
+          {/* Horizontal scan line — hidden on mobile to prevent lag */}
           <motion.div
             animate={{ top: ["0%", "100%", "0%"] }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            className="absolute left-0 right-0 h-px pointer-events-none z-[1]"
+            className="absolute left-0 right-0 h-px pointer-events-none z-[1] hidden sm:block"
             style={{
               background: "linear-gradient(90deg, transparent 0%, rgba(78,202,255,0.08) 30%, rgba(78,202,255,0.15) 50%, rgba(78,202,255,0.08) 70%, transparent 100%)",
             }}
           />
 
-          {/* Animated gradient orbs with parallax */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Mobile: lightweight static glow */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden sm:hidden">
+            <div
+              className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full opacity-20"
+              style={{
+                background: "radial-gradient(circle, #3182ce 0%, transparent 70%)",
+                filter: "blur(60px)",
+              }}
+            />
+          </div>
+
+          {/* Animated gradient orbs with parallax — desktop only */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden hidden sm:block">
             <motion.div
               animate={{
                 x: [0, 30, -20, 0],
@@ -487,22 +498,33 @@ export default function HomePage() {
               className="flex justify-center mb-6 sm:mb-10">
               <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-68 md:h-68 flex items-center justify-center">
 
-                {/* Outer orbital ring with dots */}
+                {/* Outer orbital ring with dots — hidden on mobile */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0">
+                  className="absolute inset-0 hidden sm:block">
                   <div className="w-full h-full rounded-full border border-[#3182ce]/15" />
-                  {/* Orbiting dots */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#4ECAFF] shadow-[0_0_10px_rgba(78,202,255,0.8)]" />
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#3182ce] shadow-[0_0_8px_rgba(49,130,206,0.6)]" />
                 </motion.div>
 
-                {/* Second orbital — reverse, offset */}
+                {/* Mobile: simple ring with subtle pulse */}
+                <div className="absolute inset-0 sm:hidden rounded-full border border-[#3182ce]/25" />
+                <motion.div
+                  animate={{ scale: [1, 1.08, 1], opacity: [0.15, 0.25, 0.15] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-2 sm:hidden rounded-full"
+                  style={{
+                    background: "radial-gradient(circle, #3182ce 0%, transparent 60%)",
+                    filter: "blur(20px)",
+                  }}
+                />
+
+                {/* Second orbital — hidden on mobile */}
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 sm:inset-5">
+                  className="absolute inset-4 sm:inset-5 hidden sm:block">
                   <div className="w-full h-full rounded-full border border-dashed border-white/8" />
                   <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#7c3aed] shadow-[0_0_8px_rgba(124,58,237,0.6)]" />
                 </motion.div>
@@ -527,18 +549,19 @@ export default function HomePage() {
                   }}
                 />
 
-                {/* Inner hexagonal border feel */}
+                {/* Inner hexagonal border feel — hidden on mobile */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-10 sm:inset-12 rounded-full border border-[#4ECAFF]/10"
+                  className="absolute inset-10 sm:inset-12 rounded-full border border-[#4ECAFF]/10 hidden sm:block"
                   style={{
                     borderTopColor: "rgba(78,202,255,0.35)",
                     borderLeftColor: "rgba(49,130,206,0.25)",
                   }}
                 />
 
-                {/* Particle dots scattered */}
+                {/* Particle dots — hidden on mobile */}
+                <div className="hidden sm:block">
                 {[
                   { top: "15%", left: "10%", size: 3, delay: 0 },
                   { top: "75%", left: "85%", size: 2, delay: 1.5 },
@@ -561,6 +584,7 @@ export default function HomePage() {
                     }}
                   />
                 ))}
+                </div>
 
                 {/* Center content */}
                 <div className="relative z-10 flex flex-col items-center">
@@ -770,35 +794,50 @@ export default function HomePage() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
                     transition={{ duration: 0.4 }}
-                    className="group relative h-80 bg-[#1a1c20]/40 backdrop-blur-md border border-gray-800 rounded-lg overflow-hidden hover:border-[#3182ce] shadow-none">
-                    <div className="absolute inset-0 z-0">
-                      <Image
-                        src={card.image}
-                        alt={card.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 opacity-40 group-hover:opacity-60"
-                      />
-                      <div className="absolute inset-0 bg-linear-to-t from-[#05080f] via-[#05080f]/40 to-transparent" />
-                    </div>
-                    <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center transition-all duration-300 z-10">
-                      <div className="text-[#3182ce] font-bold text-sm mb-4 tracking-widest uppercase group-hover:text-blue-400">
-                        {card.year}
+                    className="group relative bg-[#1a1c20]/40 backdrop-blur-md border border-gray-800 rounded-lg overflow-hidden hover:border-[#3182ce] shadow-none">
+                    {/* Card image area */}
+                    <div className="relative h-64 sm:h-80">
+                      <div className="absolute inset-0 z-0">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 opacity-40 group-hover:opacity-60"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-[#05080f] via-[#05080f]/40 to-transparent" />
                       </div>
-                      <h3 className="text-3xl font-extrabold bg-linear-to-r from-white to-slate-400 bg-clip-text text-transparent italic leading-tight group-hover:from-white group-hover:to-blue-200">
-                        {card.title}
-                      </h3>
+                      <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center transition-all duration-300 z-10">
+                        <div className="text-[#3182ce] font-bold text-sm mb-4 tracking-widest uppercase group-hover:text-blue-400">
+                          {card.year}
+                        </div>
+                        <h3 className="text-3xl font-extrabold bg-linear-to-r from-white to-slate-400 bg-clip-text text-transparent italic leading-tight group-hover:from-white group-hover:to-blue-200">
+                          {card.title}
+                        </h3>
+                      </div>
+                      {/* Desktop hover overlay */}
+                      <div className="absolute inset-0 p-6 sm:p-8 bg-[#0a0a0b]/95 backdrop-blur-xl hidden sm:flex flex-col justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 shadow-none">
+                        <h3 className="text-xl font-bold text-[#3182ce] italic mb-3">
+                          {card.title}
+                        </h3>
+                        <p className="text-gray-300 text-sm leading-relaxed mb-6 grow">
+                          {card.desc}
+                        </p>
+                        <button
+                          onClick={() => setSelectedCard(card)}
+                          className="bg-[#3182ce] text-white py-3 px-6 font-bold text-sm uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center cursor-pointer">
+                          Read More
+                        </button>
+                      </div>
                     </div>
-                    <div className="absolute inset-0 p-6 sm:p-8 bg-[#0a0a0b]/1 backdrop-blur-xl flex flex-col justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-20 shadow-none">
-                      <h3 className="text-xl font-bold text-[#3182ce] italic mb-3">
-                        {card.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-6 grow">
+                    {/* Mobile bottom section with description + button */}
+                    <div className="sm:hidden p-4 flex flex-col gap-3">
+                      <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">
                         {card.desc}
                       </p>
                       <button
                         onClick={() => setSelectedCard(card)}
-                        className="bg-[#3182ce] text-white py-3 px-6 font-bold text-sm uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center cursor-pointer">
+                        className="bg-[#3182ce] text-white py-2.5 px-4 font-bold text-xs uppercase tracking-wide hover:bg-[#2b6cb0] transition-colors w-full text-center cursor-pointer rounded">
                         Read More
                       </button>
                     </div>
