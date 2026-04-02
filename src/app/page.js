@@ -95,6 +95,14 @@ export default function HomePage() {
   const orbParallax1 = useTransform(scrollY, [0, 800], [0, -80]);
   const orbParallax2 = useTransform(scrollY, [0, 800], [0, -50]);
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   // Scroll listener
   useEffect(() => {
     const handleScroll = () => {
