@@ -20,9 +20,9 @@ const societies = [
     desc: "The AI & ML Society of DTU, driving innovation in deep learning, computer vision, and data science.",
   },
   {
-    name: "ALGOREV",
+    name: "ALGORAVE",
     logo: "/algorev.jpg",
-    desc: "DTU's Competitive Coding Society, sharpening algorithmic thinking and problem-solving skills.",
+    desc: "DTU's Competitive Programming Club, sharpening algorithmic thinking and problem-solving skills.",
   },
 ];
 
