@@ -26,8 +26,8 @@ const societies = [
   },
 ];
 
-// Quadruple for seamless loop on all screen sizes
-const marqueeItems = [...societies, ...societies, ...societies, ...societies];
+// Double for seamless loop
+const marqueeItems = [...societies, ...societies];
 
 export default function Collaborators() {
   return (
